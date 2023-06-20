@@ -2,7 +2,9 @@ let boniButton = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCor
 let testBtn = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ibtYyW ScButtonIcon-sc-9yap0r-0 iqxxop");
 let vorhersagen = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP");
 let blue = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue");
+let pink = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--pink");
 let intervalId;
+let isItPink = false;
 let interval;
 let channelpoints;
 let blueButtonClickCount = 0;
@@ -26,7 +28,7 @@ function getChannelpointNumber() {
     console.log("Kein Element mit der angegebenen Klasse gefunden.");
   }
 }
-
+ 
 function clicking() {
   if (boniButton.length > 0) {
     boniButton[0].click();
@@ -38,7 +40,10 @@ function bet() {
 if (vorhersagen.length > 2) {
     vorhersagen[2].click();
     if (blue.length > 0 && isActive === true) {
-      getChannelpointNumber()
+      setTimeout(function () {
+        getChannelpointNumber()
+      }, 30000);
+     
     }
   } 
 }
@@ -49,7 +54,7 @@ function pressBlue(points) {
 
   function clickButton() {
     if (counter < points) {
-      blue[0].click();
+        blue[0].click();
       counter++;
     } else {
       clearInterval(interval);

@@ -4,10 +4,27 @@ let vorhersagen = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCo
 let blue = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue");
 let intervalId;
 let interval;
+let channelpoints;
+let blueButtonClickCount = 0;
+let activeBtn;
+let isActive = true;
 
-function start() {
-  // setInterval(clicking, 1000);
-  setInterval(bet, 1000);
+let channelpointsSpan = document.getElementsByClassName("ScAnimatedNumber-sc-1iib0w9-0");
+let betBtnBlue = document.getElementsByClassName("InjectLayout-sc-1i43xsx-0 custom-prediction-button__interactive edTANu");
+let betBtnPink = document.getElementsByClassName("ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input");
+let pointsInputFeld = document.getElementsByClassName("ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input");
+let pointsInputFeldClick = document.getElementsByClassName("Layout-sc-1xcs6mc-0 bZVrjx");
+
+let betrag = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonText-sc-ocjdkq-3 hUGgcQ jYfhUy");
+
+function getChannelpointNumber() {
+  if (channelpointsSpan.length > 0) {
+    let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * 0.02);
+    console.log(channelpoints);
+    pressBlue(channelpoints);
+  } else {
+    console.log("Kein Element mit der angegebenen Klasse gefunden.");
+  }
 }
 
 function clicking() {
@@ -18,21 +35,47 @@ function clicking() {
 
 function bet() {
   console.log("betting");
-  if (vorhersagen.length > 1) {
+if (vorhersagen.length > 3) {
+    vorhersagen[3].click();
+    if (blue.length > 0 && isActive === true) {
+      getChannelpointNumber()
+    }
+  } else if (vorhersagen.length > 2) {
+    vorhersagen[2].click();
+    if (blue.length > 0 && isActive === true) {
+      getChannelpointNumber()
+    }
+  }  else if (vorhersagen.length > 1) {
     vorhersagen[1].click();
-    let count = 0;
-    intervalId = setInterval(function () {
-      if (blue.length > 0) {
-        pressBlue();
-        count++;
-      }
-      if (count > 3) {
-        clearInterval(intervalId);
-        console.log("stopped");
-        setTimeout(resetBlueButtonClickCount, 180000);
-      }
-    }, 2000);
+    if (blue.length > 0 && isActive === true) {
+      getChannelpointNumber()
+    }
+  } 
+}
+
+function pressBlue(points) {
+  console.log(points);
+  let counter = 0;
+
+  function clickButton() {
+    if (counter < points) {
+      blue[0].click();
+      counter++;
+    } else {
+      clearInterval(interval);
+      isActive = false;
+      console.log("stopped");
+    }
   }
+
+  let interval = setInterval(clickButton, 1000);
+  isActive = false;
+
+  setTimeout(function () {
+    clearInterval(interval);
+    isActive = true;
+    console.log("stopped");
+  }, 900000);
 }
 
 
@@ -40,20 +83,9 @@ function resetBlueButtonClickCount() {
   blueButtonClickCount = 0;
 }
 
-
-function pressBlue() {
-  blue[0].click();
+function start() {
+  setInterval(clicking, 1000);
+  setInterval(bet, 2000);
 }
 
 start();
-
-
-/*
-// H1-Element erstellen
-var heading = document.createElement("h1");
-heading.innerHTML = "Dies ist ein H1-Element erstellt mit JavaScript";
-
-// Das H1-Element zum Container hinzufügen
-var container = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gpZUGb");
-container.appendChild(heading);
-*/
