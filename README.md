@@ -10,7 +10,19 @@
 ## How to install
 1. Open the terminal und navigate to your wantet destination for example Desktop
 2. clone the respo init.
-3. Go to your Chrome browser and open the extensions menue 
+3. Go to your Chrome browser and open the extensions menue
+
+![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/2dde3ff4-766a-4f97-8bcd-af8c817bb007)
+
+4. Activate the developers mode
+
+![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/81d63e74-978b-4cc9-ae95-5a2cb2f72a94)
+
+5. Click on Load Unpaket and select the folder that you coppied from Github
+   
+![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/d747009c-95c4-494c-8f8e-ac90510ff5a4)
+
+
 
 ## How the code works
 
