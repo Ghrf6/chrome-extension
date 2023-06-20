@@ -1,0 +1,13 @@
+{
+    "name": "Kanalpunkte-Miner",
+    "version": "1.0.0",
+    "description": "schalte die extension ein und sammle automatisch Kanalpunkte",
+    "manifest_version": 3,
+    "author": "Gino Paganini",
+    "content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+        "js": ["app.js"]
+        }
+    ]
+}
