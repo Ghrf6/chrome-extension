@@ -6,7 +6,7 @@ let intervalId;
 let interval;
 
 function start() {
-// setInterval(clicking, 1000);
+  // setInterval(clicking, 1000);
   setInterval(bet, 1000);
 }
 
@@ -16,26 +16,37 @@ function clicking() {
   }
 }
 
-
-function bet(){
-  console.log("betting")
+function bet() {
+  console.log("betting");
   if (vorhersagen.length > 1) {
-  vorhersagen[1].click();
-    for(let i = 0; i < 3; i++){
-      if (blue.length > 0){
-      interval = setInterval(pressBlue, 2000); 
+    vorhersagen[1].click();
+    let count = 0;
+    intervalId = setInterval(function () {
+      if (blue.length > 0) {
+        pressBlue();
+        count++;
       }
-      clearInterval(interval);
-    }
-  console.log("stopped")
+      if (count > 3) {
+        clearInterval(intervalId);
+        console.log("stopped");
+        setTimeout(resetBlueButtonClickCount, 180000);
+      }
+    }, 2000);
   }
 }
 
-function pressBlue(){
+
+function resetBlueButtonClickCount() {
+  blueButtonClickCount = 0;
+}
+
+
+function pressBlue() {
   blue[0].click();
 }
 
-start()
+start();
+
 
 /*
 // H1-Element erstellen
