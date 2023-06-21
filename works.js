@@ -1,55 +1,17 @@
-let boniButton = document.getElementsByClassName(
-  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe"
-);
-let testBtn = document.getElementsByClassName(
-  "ScCoreButton-sc-ocjdkq-0 ibtYyW ScButtonIcon-sc-9yap0r-0 iqxxop"
-);
-let vorhersagen = document.getElementsByClassName(
-  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP"
-);
-let blue = document.getElementsByClassName(
-  "Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue"
-);
+let boniButton = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe");
+let blue = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue");
 let intervalId;
 let interval;
-let channelpoints;
 let blueButtonClickCount = 0;
 let activeBtn;
 let isActive = true;
-
-let channelpointsSpan = document.getElementsByClassName(
-  "ScAnimatedNumber-sc-1iib0w9-0"
-);
-let betBtnBlue = document.getElementsByClassName(
-  "InjectLayout-sc-1i43xsx-0 custom-prediction-button__interactive edTANu"
-);
-let betBtnPink = document.getElementsByClassName(
-  "ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input"
-);
-let pointsInputFeld = document.getElementsByClassName(
-  "ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input"
-);
-let pointsInputFeldClick = document.getElementsByClassName(
-  "Layout-sc-1xcs6mc-0 bZVrjx"
-);
-
-let betrag = document.getElementsByClassName(
-  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonText-sc-ocjdkq-3 hUGgcQ jYfhUy"
-);
+let pink = false;
 
 let buttons = document.getElementsByTagName("button");
 
-
-
-
-function getChannelpointNumber() {
-  if (channelpointsSpan.length > 0) {
-    let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * 0.01);
-    console.log(channelpoints);
-    pressBlue(channelpoints);
-  } else {
-    console.log("Kein Element mit der angegebenen Klasse gefunden.");
-  }
+function start() {
+  setInterval(clicking, 1000);
+  setInterval(bet, 2000);
 }
 
 function clicking() {
@@ -59,19 +21,29 @@ function clicking() {
 }
 
 function bet() {
+ // getChannelpointNumber()
   for (let i = 0; i < buttons.length; i++) {
     if (buttons[i].textContent === "Vorhersagen") {
-      buttons[i].click()
+      buttons[i].click();
       if (blue.length > 0 && isActive === true) {
         getChannelpointNumber();
       }
       console.log("Element mit dem Inhalt 'Vorhersagen' gefunden!");
       console.log(buttons[i]);
-      break; 
+      break;
     }
   }
+}
 
-
+function getChannelpointNumber() {
+  let channelpointsSpan = document.getElementsByClassName("ScAnimatedNumber-sc-1iib0w9-0");
+  if (channelpointsSpan.length > 0) {
+    let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * 0.01);
+    console.log(channelpoints);
+    pressBlue(channelpoints);
+  } else {
+    console.log("Kein Element mit der angegebenen Klasse gefunden.");
+  }
 }
 
 function pressBlue(points) {
@@ -89,7 +61,7 @@ function pressBlue(points) {
     }
   }
 
-  let interval = setInterval(clickButton, 1000);
+  interval = setInterval(clickButton, 1000);
   isActive = false;
 
   setTimeout(function () {
@@ -101,11 +73,6 @@ function pressBlue(points) {
 
 function resetBlueButtonClickCount() {
   blueButtonClickCount = 0;
-}
-
-function start() {
-  setInterval(clicking, 1000);
-  setInterval(bet, 2000);
 }
 
 start();
