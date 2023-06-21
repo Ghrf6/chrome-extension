@@ -1,7 +1,15 @@
-let boniButton = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe");
-let testBtn = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ibtYyW ScButtonIcon-sc-9yap0r-0 iqxxop");
-let vorhersagen = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP");
-let blue = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue");
+let boniButton = document.getElementsByClassName(
+  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe"
+);
+let testBtn = document.getElementsByClassName(
+  "ScCoreButton-sc-ocjdkq-0 ibtYyW ScButtonIcon-sc-9yap0r-0 iqxxop"
+);
+let vorhersagen = document.getElementsByClassName(
+  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP"
+);
+let blue = document.getElementsByClassName(
+  "Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue"
+);
 let intervalId;
 let interval;
 let channelpoints;
@@ -9,17 +17,34 @@ let blueButtonClickCount = 0;
 let activeBtn;
 let isActive = true;
 
-let channelpointsSpan = document.getElementsByClassName("ScAnimatedNumber-sc-1iib0w9-0");
-let betBtnBlue = document.getElementsByClassName("InjectLayout-sc-1i43xsx-0 custom-prediction-button__interactive edTANu");
-let betBtnPink = document.getElementsByClassName("ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input");
-let pointsInputFeld = document.getElementsByClassName("ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input");
-let pointsInputFeldClick = document.getElementsByClassName("Layout-sc-1xcs6mc-0 bZVrjx");
+let channelpointsSpan = document.getElementsByClassName(
+  "ScAnimatedNumber-sc-1iib0w9-0"
+);
+let betBtnBlue = document.getElementsByClassName(
+  "InjectLayout-sc-1i43xsx-0 custom-prediction-button__interactive edTANu"
+);
+let betBtnPink = document.getElementsByClassName(
+  "ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input"
+);
+let pointsInputFeld = document.getElementsByClassName(
+  "ScInputBase-sc-vu7u7d-0 ScInput-sc-19xfhag-0 eeTKnM iXedIZ InjectLayout-sc-1i43xsx-0 hQzFgv tw-input"
+);
+let pointsInputFeldClick = document.getElementsByClassName(
+  "Layout-sc-1xcs6mc-0 bZVrjx"
+);
 
-let betrag = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonText-sc-ocjdkq-3 hUGgcQ jYfhUy");
+let betrag = document.getElementsByClassName(
+  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonText-sc-ocjdkq-3 hUGgcQ jYfhUy"
+);
+
+let buttons = document.getElementsByTagName("button");
+
+
+
 
 function getChannelpointNumber() {
   if (channelpointsSpan.length > 0) {
-    let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * 0.02);
+    let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * 0.01);
     console.log(channelpoints);
     pressBlue(channelpoints);
   } else {
@@ -34,23 +59,19 @@ function clicking() {
 }
 
 function bet() {
-  console.log("betting");
-if (vorhersagen.length > 3) {
-    vorhersagen[3].click();
-    if (blue.length > 0 && isActive === true) {
-      getChannelpointNumber()
+  for (let i = 0; i < buttons.length; i++) {
+    if (buttons[i].textContent === "Vorhersagen") {
+      buttons[i].click()
+      if (blue.length > 0 && isActive === true) {
+        getChannelpointNumber();
+      }
+      console.log("Element mit dem Inhalt 'Vorhersagen' gefunden!");
+      console.log(buttons[i]);
+      break; 
     }
-  } else if (vorhersagen.length > 2) {
-    vorhersagen[2].click();
-    if (blue.length > 0 && isActive === true) {
-      getChannelpointNumber()
-    }
-  }  else if (vorhersagen.length > 1) {
-    vorhersagen[1].click();
-    if (blue.length > 0 && isActive === true) {
-      getChannelpointNumber()
-    }
-  } 
+  }
+
+
 }
 
 function pressBlue(points) {
@@ -74,10 +95,9 @@ function pressBlue(points) {
   setTimeout(function () {
     clearInterval(interval);
     isActive = true;
-    console.log("stopped");
+    location.reload();
   }, 900000);
 }
-
 
 function resetBlueButtonClickCount() {
   blueButtonClickCount = 0;
