@@ -3,7 +3,8 @@
 # README Contents
 ---
 1. [How to install](#how-to-install)
-2. [How the code works](#how-the-code-works)
+2. [How to customice the Extension](#how-to-customice-the-extension)
+3. [How the code works](#how-the-code-works)
 - [app.js](#appjs)
 - [settings.html](#settingshtml)
 
@@ -24,7 +25,7 @@
 
 6. Oppen the Stream that you want and let your PC / Laptop mine.
 
-
+## How to customice the Extension
 
 ## How the code works
 
