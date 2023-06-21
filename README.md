@@ -22,6 +22,8 @@
    
 ![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/d747009c-95c4-494c-8f8e-ac90510ff5a4)
 
+6. Oppen the Stream that you want and let your PC / Laptop mine.
+
 
 
 ## How the code works
