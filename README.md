@@ -5,8 +5,6 @@ Its A Chrome extension that can watch a stream without you having to collect bon
 1. [How to install](#how-to-install)
 2. [How to customize the Extension](#how-to-customize-the-extension)
 3. [How the code works](#how-the-code-works)
-  - [app.js](#appjs)
-
 
 ## How to install
 1. Open the terminal and navigate to your desired destination, for example, the Desktop.
@@ -36,8 +34,6 @@ There are five things you can customize:
 5. You can choose which side to bet on (blue or pink).
 
 ## How the code works
-
-### app.js
 
 The top variables are the ones you can customize as you like. I wouldn't recommend modifying the others unless you know what you're doing.
 The `start()` function initiates the collection of bonuses and the betting function at an interval of 1 to 2 seconds.
