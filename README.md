@@ -10,7 +10,7 @@
 
 ## How to install
 1. Open the terminal und navigate to your wantet destination for example Desktop
-2. clone the respo init.
+2. clone the repo init.
 3. Go to your Chrome browser and open the extensions menue
 
 ![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/2dde3ff4-766a-4f97-8bcd-af8c817bb007)
