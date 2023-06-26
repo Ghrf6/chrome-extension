@@ -14,15 +14,15 @@ Its A Chrome extension that can watch a stream without you having to collect bon
 3. Open the folder and inside it, open `app.js` and change the keyword to match the language of your browser/Twitch.
 4. Go to your Chrome browser and open the extensions menu.
 
-![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/2dde3ff4-766a-4f97-8bcd-af8c817bb007)
+![image](img/1.png)
 
 5. Activate the developer mode.
 
-![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/81d63e74-978b-4cc9-ae95-5a2cb2f72a94)
+![image](img/2.png)
 
 6. Click on "Load Unpacked" and select the folder that you copied from GitHub.
 
-![image](https://github.com/Ghrf6/chrome-extension/assets/111276076/d747009c-95c4-494c-8f8e-ac90510ff5a4)
+![image](img/3.png)
 
 7. Open the stream you want to watch and let your PC/Laptop mine.
 
