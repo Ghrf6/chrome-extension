@@ -1,12 +1,11 @@
-A Chrome extension is available so that you can watch a stream without having to collect bonuses every 15 minutes. Additionally, it automatically places bets, allowing you to leave the tab open without any manual intervention.
+Its A Chrome extension that can watch a stream without you having to collect bonuses every 15 minutes. Additionally, it automatically places bets, allowing you to leave the tab open without any manual intervention.
 
 # README Contents
 ---
 1. [How to install](#how-to-install)
 2. [How to customize the Extension](#how-to-customize-the-extension)
-3. [How the code works](#How-the-code-works)
-- [manifest.json](#manifestjson)
-- [app.js](#appjs)
+3. [How the code works](#how-the-code-works)
+  - [app.js](#appjs)
 
 
 ## How to install
@@ -37,10 +36,6 @@ There are five things you can customize:
 5. You can choose which side to bet on (blue or pink).
 
 ## How the code works
-
-### manifest.json
-
-This file is specific to Chrome and allows you to select the folder for the extension.
 
 ### app.js
 
