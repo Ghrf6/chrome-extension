@@ -3,7 +3,7 @@ let boni = true;              // claiming the bonus is on
 let bettPercentAmount = 20;   // how many percent of your points you want to bet
 let waitingTime = 15;         // how many minutes you wait until you bet again
 let betOn = "blue"            // bet on "blue" or "pink"
-let keyword = "Vorhersagen"   // you NEED to change this variabel to the language that your browser / Twitch displays it
+let keyword = "Vorhersagen"   // you NEED to change this variabel to the language that your browser displays it
 
 
 
@@ -23,7 +23,6 @@ let pink = false;
 let buttons = document.getElementsByTagName("button");
 
 function start() {
-  console.log("startet")
   if(boni){
     setInterval(clicking, 1000);
   }
