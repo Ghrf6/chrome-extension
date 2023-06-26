@@ -27,7 +27,21 @@
 
 ## How to customice the Extension
 
+There are five things you can customise:
+1. You can enable or disable that you collect the boni every 15 Minutes.
+2. You can enable or disable the betting.
+3. You can decide how many percent of your channelpoints are beeing bettet.
+4. You can decide how long it should wait until it auto bets agai (usefull for Stream that bet very often)
+5. You can decide on which side to bet on (blue or pink) 
+
 ## How the code works
+
+The top variabels are the variabels you can customise as you like. The others i wouldntn mess with but if you now waht you are doing feel free...
+start() starts the function that is collecting the boni and the function that is betting in an interwall of 1 and 2 seconds. 
+clicking() checks every second if there is a boni tho collect if yes it collects it.
+bet() looks if there is a bet active if(true) it presses it and starts getChannelpointNumber()
+getChannelpointNumber() gets your current channelpoints amount and then starts pressBtn()
+pressBtn() click on the bet button on Twitch that you decided (blue or pink) as many times as you want (the percent amount of you channelpoints)
 
 
 ### app.js
