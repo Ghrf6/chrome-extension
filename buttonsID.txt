@@ -2,9 +2,3 @@ boni = ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe
 einstellungen = ScCoreButton-sc-ocjdkq-0 ibtYyW ScButtonIcon-sc-9yap0r-0 iqxxop
 vorhersagen = ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP
 betBlue = Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--blue
-
-,
-    "action":{
-        "default_popup": "index.html",
-        "default_title": "Kanalpunkte-Miner"
-    } 

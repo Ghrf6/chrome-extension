@@ -3,6 +3,7 @@ let boni = true;              // claiming the bonus is on
 let bettPercentAmount = 20;   // how many percent of your points you want to bet
 let waitingTime = 15;         // how many minutes you wait until you bet again
 let betOn = "blue"            // bet on "blue" or "pink"
+let keyword = "Vorhersagen"   // you NEED to change this variabel to the language that your browser displays it
 
 
 
@@ -38,14 +39,13 @@ function clicking() {
 
 function bet() {
   for (let i = 0; i < buttons.length; i++) {
-    if (buttons[i].textContent === "Vorhersagen") {
+    if (buttons[i].textContent === keyword) {
       console.log("betting startet");
       buttons[i].click();
       if (blue.length > 0 && isActive === true) {
         getChannelpointNumber();
       }
-      console.log("Element mit dem Inhalt 'Vorhersagen' gefunden!");
-      console.log(buttons[i]);
+      console.log("Not found!");
       break;
     }
   }
@@ -58,13 +58,13 @@ function getChannelpointNumber() {
   if (channelpointsSpan.length > 0) {
     let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * bettPercentAmount * 0.001);
     console.log(channelpoints);
-    pressBlue(channelpoints);
+    pressBtn(channelpoints);
   } else {
     console.log("Kein Element mit der angegebenen Klasse gefunden.");
   }
 }
 
-function pressBlue(points) {
+function pressBtn(points) {
   console.log(points);
   let counter = 0;
 
