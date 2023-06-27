@@ -8,7 +8,7 @@ Its A Chrome extension that can watch a stream without you having to collect bon
 
 ## How to install
 1. Open the terminal and navigate to your desired destination, for example, the Desktop.
-2. Clone the repository.
+2. Clone the repository or download the ZIP file.
 3. Open the folder and inside it, open `app.js` and change the keyword to match the language of your browser/Twitch.
 4. Go to your Chrome browser and open the extensions menu.
 
