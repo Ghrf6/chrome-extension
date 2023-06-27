@@ -13,6 +13,10 @@ let boniButton = document.getElementsByClassName(
 let blue = document.getElementsByClassName(
   "Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--" + betOn
 );
+let accept = document.getElementsByClassName(
+  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP"
+);
+
 let intervalId;
 let interval;
 let blueButtonClickCount = 0;
@@ -43,6 +47,7 @@ function bet() {
     if (buttons[i].textContent === keyword) {
       console.log("betting startet");
       buttons[i].click();
+      accept.click();
       if (blue.length > 0 && isActive === true) {
         getChannelpointNumber();
       }
