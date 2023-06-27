@@ -47,7 +47,7 @@ function bet() {
     if (buttons[i].textContent === keyword) {
       console.log("betting startet");
       buttons[i].click();
-      accept.click();
+      //accept.click();
       if (blue.length > 0 && isActive === true) {
         getChannelpointNumber();
       }
