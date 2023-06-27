@@ -23,6 +23,7 @@ let pink = false;
 let buttons = document.getElementsByTagName("button");
 
 function start() {
+  console.log("started")
   if(boni){
     setInterval(clicking, 1000);
   }
