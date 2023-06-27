@@ -3,7 +3,7 @@ let boni = true;              // claiming the bonus is on
 let bettPercentAmount = 20;   // how many percent of your points you want to bet
 let waitingTime = 15;         // how many minutes you wait until you bet again
 let betOn = "blue"            // bet on "blue" or "pink"
-let keyword = "Vorhersagen"   // you NEED to change this variabel to the language that your browser displays it
+let keyword = "Vorhersagen"   // you NEED to change this variabel to 'Predict' if your Twitch language is english
 
 
 
@@ -13,14 +13,9 @@ let boniButton = document.getElementsByClassName(
 let blue = document.getElementsByClassName(
   "Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--" + betOn
 );
-let accept = document.getElementsByClassName(
-  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonPrimary-sc-ocjdkq-1 ibtYyW wgheP"
-);
 
-let intervalId;
 let interval;
 let blueButtonClickCount = 0;
-let activeBtn;
 let isActive = true;
 let pink = false;
 
