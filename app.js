@@ -3,7 +3,7 @@ let boni = true;              // claiming the bonus is on
 let bettPercentAmount = 20;   // how many percent of your points you want to bet
 let waitingTime = 15;         // how many minutes you wait until you bet again
 let betOn = "blue"            // bet on "blue" or "pink"
-let keyword = "Vorhersagen"   // you NEED to change this variabel to 'Predict' if your Twitch language is english
+let keyword = "Predict"   // you NEED to change this variabel to 'Predict' if your Twitch language is english
 
 
 let channelpointsSpan = document.getElementsByClassName("ScAnimatedNumber-sc-1iib0w9-0");

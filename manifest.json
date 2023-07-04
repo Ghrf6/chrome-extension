@@ -1,9 +1,14 @@
 {
     "name": "Channelpoints-Miner",
     "version": "1.0.0",
-    "description": "Schalte die Extension ein und sammle automatisch Kanalpunkte",
+    "description": "Automaticly collecting the twitch boni, works in diffrent languages",
     "manifest_version": 3,
     "author": "Gino Paganini",
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
     "content_scripts": [
         {
             "matches": ["*://*.twitch.tv/*"],
@@ -11,3 +16,4 @@
         }
     ]
 }
+
