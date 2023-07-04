@@ -1,5 +1,5 @@
 {
-    "name": "Kanalpunkte-Miner",
+    "name": "Channelpoints-Miner",
     "version": "1.0.0",
     "description": "Schalte die Extension ein und sammle automatisch Kanalpunkte",
     "manifest_version": 3,
