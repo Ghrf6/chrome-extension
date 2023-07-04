@@ -6,20 +6,18 @@ let betOn = "blue"            // bet on "blue" or "pink"
 let keyword = "Vorhersagen"   // you NEED to change this variabel to 'Predict' if your Twitch language is english
 
 
-
-let boniButton = document.getElementsByClassName(
-  "ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe"
-);
-let blue = document.getElementsByClassName(
-  "Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--" + betOn
-);
+let channelpointsSpan = document.getElementsByClassName("ScAnimatedNumber-sc-1iib0w9-0");
+let boniButton = document.getElementsByClassName("ScCoreButton-sc-ocjdkq-0 ScCoreButtonSuccess-sc-ocjdkq-5 ibtYyW kIlsPe");
+let blue = document.getElementsByClassName("Layout-sc-1xcs6mc-0 gcdnNQ fixed-prediction-button fixed-prediction-button--" + betOn);
+let buttons = document.getElementsByTagName("button");
 
 let interval;
 let blueButtonClickCount = 0;
 let isActive = true;
 let pink = false;
 
-let buttons = document.getElementsByTagName("button");
+
+start();
 
 function start() {
   console.log("started")
@@ -42,7 +40,6 @@ function bet() {
     if (buttons[i].textContent === keyword) {
       console.log("betting startet");
       buttons[i].click();
-      //accept.click();
       if (blue.length > 0 && isActive === true) {
         getChannelpointNumber();
       }
@@ -53,9 +50,7 @@ function bet() {
 }
 
 function getChannelpointNumber() {
-  let channelpointsSpan = document.getElementsByClassName(
-    "ScAnimatedNumber-sc-1iib0w9-0"
-  );
+
   if (channelpointsSpan.length > 0) {
     let channelpoints = Math.floor(channelpointsSpan[0].innerHTML * bettPercentAmount * 0.001);
     console.log(channelpoints);
@@ -93,5 +88,3 @@ function pressBtn(points) {
 function resetBlueButtonClickCount() {
   blueButtonClickCount = 0;
 }
-
-start();
